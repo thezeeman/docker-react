@@ -5,5 +5,7 @@ services:
 before_install:
   - docker build -t szades/docker-react -f Dockerfile.dev .
   
-  script:
+script:
     - docker run -e CI=true szades/docker-react npm run test -- --coverage
+
+
