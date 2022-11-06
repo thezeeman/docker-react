@@ -1,0 +1,7 @@
+sudo: required
+services:
+  - docker
+before_install:
+  - docker build -t szades/docker-react -f Dockerfile.dev .
+script:
+  - docker run szade/docker-react npm run test -- --coverage
